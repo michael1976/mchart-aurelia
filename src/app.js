@@ -1,15 +1,8 @@
-export class Welcome{
-    constructor(){
-        this.heading = 'Welcome to the Aurelia Navigation App!';
-        this.firstName = 'John';
-        this.lastName = 'Doe';
-    }
+import {LogManager} from 'aurelia-framework';
+//import {ConsoleAppender} from 'aurelia-logging-console';
 
-    get fullName(){
-        return `${this.firstName} ${this.lastName}`;
-    }
+//LogManager.setLevel(LogManager.levels.debug)
 
-    welcome(){
-        alert(`Welcome, ${this.fullName}!`);
-    }
+export class App {
+
 }
