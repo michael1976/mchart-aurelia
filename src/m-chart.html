@@ -2,62 +2,19 @@
 
     <!--TODO: Localize strings-->
 
-    <import from="./json-format"></import>
+    <!--<import from="./json-format"></import>-->
+    <import from="./dimension"></import>
 
-    <div id="dimension_${$index}" repeat.for="dimension of dimensions">
-        <table class="table">
-            <thead>
-            <tr class="pomTableHeadersRow">
-                <th class="rowActionHeaderCell">Actions</th>
-                <th class="sortOrderCell">Sort</th>
-                <th class="pomDescCell">Measurement Point</th>
-                <th class="typeCell"></th>
-                <th class="commentCell">Description</th>
-                <th class="changedPomCell">*</th>
-                <th class="gradingCell">Grading</th>
-                <th repeat.for="size of $parent.uniqueSizes(dimension)" class="sizeCell">
-                    ${size}
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr repeat.for="pom of dimension.poms" class="pom">
-                    <td class="rowActionCell">
-                        <!--3 ikoner, dra, lägg till, ta bort-->
-                    </td>
-                    <td class="sortOrderCell"></td>
-                    <td class="pomDescCell">
-                        <input type="text" value.bind="pom.description"/>
-                    </td>
-                    <td class="typeCell"></td>
-                    <td class="commentCell">
-                        <input type="text" value.bind="pom.comment"/>
-                    </td>
-                    <td class="changedPomCell">
-                        <input type="checkbox">
-                    </td>
-                    <td class="gradingCell">
-                        <input type="text" value.bind="pom.grading"/>
-                    </td>
-                    <!--<td class="sizeCell baseSize"></td>-->
-                    <td repeat.for="size of pom.sizes" class="sizeCell">
-                        ${size.gradeValue}
-                    </td>
-                    <!--etc..-->
-                </tr>
-            </tbody>
-        </table>
-
+    <div repeat.for="dimension of dimensions" id="dimension_${$index}">
+        <dimension item.bind="dimension"></dimension>
     </div>
 
+    <!--<div>-->
+        <!--<button click.delegate="addRow()" type="button">Add row</button>-->
+    <!--</div>-->
 
-    <div>
-        <button click.delegate="addRow()" type="button">Add row</button>
-    </div>
-
-
-    <div>
-        <pre>debug dimensions: ${dimensions | jsonFormat}</pre>
-    </div>
+    <!--<div>-->
+        <!--<pre>debug dimensions: ${dimensions | jsonFormat}</pre>-->
+    <!--</div>-->
 
 </template>

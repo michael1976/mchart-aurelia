@@ -29,15 +29,4 @@ export class MChart {
         this.dimensions[0].poms.push({enoviaId: 'xyz'});
     }
 
-    uniqueSizes(dimension) {
-        var sizes = new Set(); // use set to filter out duplicates
-        for (let pom of dimension.poms) {
-            for (let size of pom.sizes) {
-                sizes.add(size.sizeName);
-            }
-        }
-        //TODO: Will probably return a map instead
-        return Array.from(sizes);
-    }
-
 }
