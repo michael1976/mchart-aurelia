@@ -1,7 +1,7 @@
 export function staticMChart() {
     return {
-        "mchartId": "48352.32064.16008.29581",
-        "name": "",
+        "mchartId": "48352.32064.6164.7071",
+        "name": "chartname",
         "state": "Initiated",
         "blockMchart": false,
         "hasEditAccessBasedOnRole": true,
@@ -9,114 +9,155 @@ export function staticMChart() {
         "copyable": true,
         "dimensions": [
             {
-                "enoviaId": "48352.32064.42400.29346",
+                "enoviaId": "48352.32064.7728.43634",
                 "baseDimension": true,
                 "sortOrder": 0,
                 "referenceDimensionId": null,
                 "poms": [
                     {
-                        "enoviaId": "48352.32064.42400.31612",
-                        "relId": "48352.32064.57344.9020",
-                        "name": "POM100176",
+                        "enoviaId": "48352.32064.62888.30433",
+                        "relId": "48352.32064.13440.37299",
+                        "name": "POM10022",
                         "sortOrder": 0,
-                        "description": "Linda",
+                        "description": "Back length",
                         "grading": "",
-                        "comment": "test",
+                        "comment": "",
                         "qualityControl": false,
-                        "libPOM": false,
+                        "libPOM": true,
                         "diagPOM": false,
                         "edited": false,
                         "calculable": true,
                         "sizes": [
                             {
-                                "enoviaId": "48352.32064.40844.16855",
-                                "gradeRelId": "48352.32064.57344.12602",
-                                "sizeName": "75B",
-                                "measurementValue": "56",
+                                "enoviaId": "48352.32064.51728.28093",
+                                "gradeRelId": "48352.32064.13440.38105",
+                                "sizeName": "S",
+                                "measurementValue": "68",
                                 "gradeValue": "-2",
                                 "dimension": "",
                                 "sortOrder": 0,
                                 "baseSize": false,
-                                "sizeSortOrder": 246
-                            },
-                            {
-                                "enoviaId": "48352.32064.51728.28093",
-                                "gradeRelId": "48352.32064.57344.16389",
-                                "sizeName": "S",
-                                "measurementValue": "58",
-                                "gradeValue": "0",
-                                "dimension": "",
-                                "sortOrder": 1,
-                                "baseSize": true,
                                 "sizeSortOrder": 300
                             },
                             {
                                 "enoviaId": "48352.32064.51728.43846",
-                                "gradeRelId": "48352.32064.57344.16888",
+                                "gradeRelId": "48352.32064.13440.39389",
                                 "sizeName": "M",
-                                "measurementValue": "60",
+                                "measurementValue": "70",
+                                "gradeValue": "0",
+                                "dimension": "",
+                                "sortOrder": 1,
+                                "baseSize": true,
+                                "sizeSortOrder": 295
+                            },
+                            {
+                                "enoviaId": "48352.32064.51728.34050",
+                                "gradeRelId": "48352.32064.13440.42619",
+                                "sizeName": "L",
+                                "measurementValue": "72",
                                 "gradeValue": "2",
                                 "dimension": "",
                                 "sortOrder": 2,
                                 "baseSize": false,
-                                "sizeSortOrder": 295
+                                "sizeSortOrder": 291
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                "enoviaId": "48352.32064.7476.46640",
-                "baseDimension": false,
-                "sortOrder": 1,
-                "referenceDimensionId": null,
-                "poms": [
+                    },
                     {
-                        "enoviaId": "48352.32064.42400.31612",
-                        "relId": "48352.32064.57344.17863",
-                        "name": "POM100176",
-                        "sortOrder": 0,
-                        "description": "Linda",
+                        "enoviaId": "48352.32064.62888.61366",
+                        "relId": "48352.32064.28520.48267",
+                        "name": "POM10016",
+                        "sortOrder": 1,
+                        "description": "Back rise",
                         "grading": "",
-                        "comment": "test",
+                        "comment": "",
                         "qualityControl": false,
-                        "libPOM": false,
+                        "libPOM": true,
                         "diagPOM": false,
                         "edited": false,
                         "calculable": true,
                         "sizes": [
                             {
-                                "enoviaId": "48352.32064.62612.27549",
-                                "gradeRelId": "48352.32064.57344.20628",
-                                "sizeName": "70B",
-                                "measurementValue": "56",
-                                "gradeValue": "-2",
+                                "enoviaId": "48352.32064.51728.28093",
+                                "gradeRelId": "48352.32064.28520.51353",
+                                "sizeName": "S",
+                                "measurementValue": "36",
+                                "gradeValue": "-4",
                                 "dimension": "",
                                 "sortOrder": 0,
                                 "baseSize": false,
-                                "sizeSortOrder": 316
+                                "sizeSortOrder": 300
                             },
                             {
-                                "enoviaId": "48352.32064.29960.18459",
-                                "gradeRelId": "48352.32064.57344.22929",
-                                "sizeName": "3XS",
-                                "measurementValue": "58",
+                                "enoviaId": "48352.32064.51728.43846",
+                                "gradeRelId": "48352.32064.28520.53195",
+                                "sizeName": "M",
+                                "measurementValue": "40",
                                 "gradeValue": "0",
                                 "dimension": "",
                                 "sortOrder": 1,
                                 "baseSize": true,
-                                "sizeSortOrder": 215
+                                "sizeSortOrder": 295
                             },
                             {
-                                "enoviaId": "48352.32064.40844.13152",
-                                "gradeRelId": "48352.32064.57344.24934",
-                                "sizeName": "75F",
-                                "measurementValue": "60",
-                                "gradeValue": "2",
+                                "enoviaId": "48352.32064.51728.34050",
+                                "gradeRelId": "48352.32064.28520.53915",
+                                "sizeName": "L",
+                                "measurementValue": "44",
+                                "gradeValue": "4",
                                 "dimension": "",
                                 "sortOrder": 2,
                                 "baseSize": false,
-                                "sizeSortOrder": 250
+                                "sizeSortOrder": 291
+                            }
+                        ]
+                    },
+                    {
+                        "enoviaId": "48352.32064.62888.29325",
+                        "relId": "48352.32064.28520.54239",
+                        "name": "POM10009",
+                        "sortOrder": 2,
+                        "description": "Bottom back",
+                        "grading": "",
+                        "comment": "",
+                        "qualityControl": false,
+                        "libPOM": true,
+                        "diagPOM": false,
+                        "edited": false,
+                        "calculable": true,
+                        "sizes": [
+                            {
+                                "enoviaId": "48352.32064.51728.28093",
+                                "gradeRelId": "48352.32064.28520.58061",
+                                "sizeName": "S",
+                                "measurementValue": "44",
+                                "gradeValue": "-1",
+                                "dimension": "",
+                                "sortOrder": 0,
+                                "baseSize": false,
+                                "sizeSortOrder": 300
+                            },
+                            {
+                                "enoviaId": "48352.32064.51728.43846",
+                                "gradeRelId": "48352.32064.28520.59044",
+                                "sizeName": "M",
+                                "measurementValue": "45",
+                                "gradeValue": "0",
+                                "dimension": "",
+                                "sortOrder": 1,
+                                "baseSize": true,
+                                "sizeSortOrder": 295
+                            },
+                            {
+                                "enoviaId": "48352.32064.51728.34050",
+                                "gradeRelId": "48352.32064.28520.61811",
+                                "sizeName": "L",
+                                "measurementValue": "46",
+                                "gradeValue": "1",
+                                "dimension": "",
+                                "sortOrder": 2,
+                                "baseSize": false,
+                                "sizeSortOrder": 291
                             }
                         ]
                     }
