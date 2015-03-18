@@ -1,6 +1,9 @@
 <template>
-    <import from='./m-chart'></import>
+    <import from='./nav-bar'></import>
+
+    <nav-bar router.bind="router"></nav-bar>
+
     <div class="page-host">
-        <m-chart></m-chart>
+        <router-view></router-view>
     </div>
 </template>

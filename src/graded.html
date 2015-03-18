@@ -1,0 +1,7 @@
+<template>
+    <section>
+        <div repeat.for="dimension of dimensions" id="dimension_${$index}">
+            <compose model.bind="dimension" view-model="./dimension" view="./graded-dimension.html"></compose>
+        </div>
+    </section>
+</template>

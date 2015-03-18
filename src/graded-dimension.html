@@ -1,0 +1,34 @@
+<template>
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="sortOrderCell">Sort</th>
+            <th class="changedPomCell">*</th>
+            <th class="pomDescCell">Measurement Point</th>
+            <th class="commentCell">Description</th>
+            <th repeat.for="sizeName of sizeNames()" class="sizeCell ${size.baseSize ? 'baseSize' : ''}">
+                ${sizeName}
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr repeat.for="pom of poms" class="pom">
+            <td class="sortOrderCell">
+                ${pom.sortOrder}
+            </td>
+            <td class="changedCell"></td>
+            <td class="pomDescCell">
+                ${pom.description}
+            </td>
+            <td class="commentCell">
+                ${pom.comment}
+            </td>
+            <td repeat.for="size of pom.sizes" class="sizeCell">
+                ${size.baseSize ? size.measurementValue : size.gradeValue}
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</template>

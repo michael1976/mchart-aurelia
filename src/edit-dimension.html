@@ -16,9 +16,9 @@
                 ${sizeName}
 
                 <div class="columnActions">
-                    <a href="#" click.delegate="$parent.toggleBaseSize(size)" class="setBaseSizeIcon">B</a>
-                    <a href="#" click.delegate="$parent.addSize()" class="addSizeIcon">+</a>
-                    <a href="#" click.delegate="$parent.removeSize()" class="removeSizeIcon">-</a>
+                    <a href="#" click.delegate="toggleBaseSize(size)" class="setBaseSizeIcon">B</a>
+                    <a href="#" click.delegate="addSize()" class="addSizeIcon">+</a>
+                    <a href="#" click.delegate="removeSize()" class="removeSizeIcon">-</a>
                 </div>
 
             </th>
@@ -26,15 +26,19 @@
         </thead>
 
         <tbody>
-        <tr repeat.for="pom of item.poms" class="pom">
+        <tr repeat.for="pom of poms" class="pom">
             <td class="rowActionCell">
                 <!--3 ikoner, dra, lägg till, ta bort-->
             </td>
-            <td class="sortOrderCell"></td>
+            <td class="sortOrderCell">
+                ${pom.sortOrder}
+            </td>
             <td class="pomDescCell">
                 <input type="text" value.bind="pom.description"/>
             </td>
-            <td class="typeCell"></td>
+            <td class="typeCell">
+                <img src="images/size_16x16.png" title="According to How to measure">
+            </td>
             <td class="commentCell">
                 <input type="text" value.bind="pom.comment"/>
             </td>
@@ -46,8 +50,8 @@
             </td>
             <!--<td class="sizeCell baseSize"></td>-->
             <td repeat.for="size of pom.sizes" class="sizeCell">
-                <input type="text" value.bind="size.gradeValue"/>
-
+                <input if.bind="size.baseSize" type="text" value.bind="size.measurementValue"/>
+                <input if.bind="!size.baseSize" type="text" value.bind="size.gradeValue"/>
             </td>
             <!--etc..-->
         </tr>

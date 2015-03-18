@@ -7,28 +7,28 @@ import {Behavior} from 'aurelia-framework';
 export class Dimension {
 
     // telling the framework which properties are available on custom element
-    static metadata() {
-        return Behavior.withProperty('item');
-    }
+    //static metadata() {
+    //    return Behavior.withProperty('model');
+    //}
 
     // the compose element will call this and pass in each dimension
-    //activate(dimension) {
-    //    this.enoviaId = dimension.enoviaId;
-    //    this.baseDimension = dimension.baseDimension;
-    //    this.sortOrder = dimension.sortOrder;
-    //    this.referenceDimensionId = dimension.referenceDimensionId;
-    //    this.poms = dimension.poms;
-    //}
+    activate(dimension) {
+        this.enoviaId = dimension.enoviaId;
+        this.baseDimension = dimension.baseDimension;
+        this.sortOrder = dimension.sortOrder;
+        this.referenceDimensionId = dimension.referenceDimensionId;
+        this.poms = dimension.poms;
+    }
 
     sizeNames() {
         //TODO: do I need to filter out dupliates? then use Set.add()
-        var sizeNames = new Set()
-        for (let pom of this.item.poms) {
+        var sizeNames = new Set();
+        for (let pom of this.poms) {
             for (let size of pom.sizes) {
                 sizeNames.add(size.sizeName);
             }
         }
-        return Array.from(sizeNames)
+        return Array.from(sizeNames);
     }
 
     toggleBaseSize(size) {
