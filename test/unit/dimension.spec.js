@@ -161,17 +161,22 @@ describe('the Dimension module', () => {
 
     var sut;
     beforeEach(() => {
+        // given
         sut = new Dimension();
         sut.activate(dimension);
     });
 
     it('returns an array of unique sizes for a specific dimension', () => {
-        var sizes = sut.sizeNames();
+        // when
+        var sizes = sut.allSizes();
+        // then
         expect(sizes).toContain('S', 'M', 'L');
     });
 
-    xit('applies a baseSize to a size in all poms for a dimension', () => {
+    it('applies a baseSize to a size in all poms for a dimension', () => {
+        // when
         sut.toggleBaseSize('S');
+        // then
         for (let pom of sut.poms) {
             for (let size of pom.sizes) {
                 if (size.sizeName === 'S') {

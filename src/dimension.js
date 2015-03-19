@@ -18,25 +18,21 @@ export class Dimension {
     }
 
     /**
-     * flatten array ->
-     * get value sizeName from all elements ->
-     * filter down to unique values
+     * get all sizes objects from first pom
      */
-    sizeNames() {
-        return _.chain(this.poms)
-            .pluck('sizes')
-            .flatten()
-            .pluck('sizeName')
-            .uniq()
-            .value();
+    allSizes() {
+        return _.chain(this.poms).pluck('sizes').first().value();
     }
 
-    /**
-     * update all sizes on this dimension
-     */
     toggleBaseSize(sizeName) {
-        // TODO: find size under poms
-        // TODO: toggle it as baseSize and deactivate the others
+        _.chain(this.poms)
+        .pluck('sizes')
+        .flatten()
+        .map(size => {
+                // if size with sizeName found then set baseSize to true
+                size.baseSize = sizeName === size.sizeName;
+            })
+        .value();
     }
 
     addSize() {

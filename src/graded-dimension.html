@@ -6,8 +6,8 @@
             <th class="changedPomCell">*</th>
             <th class="pomDescCell">Measurement Point</th>
             <th class="commentCell">Description</th>
-            <th repeat.for="sizeName of sizeNames()" class="sizeCell ${size.baseSize ? 'baseSize' : ''}">
-                ${sizeName}
+            <th repeat.for="size of allSizes()" class="sizeCell ${size.baseSize ? 'active' : ''}">
+                ${size.sizeName}
             </th>
         </tr>
         </thead>
@@ -24,7 +24,7 @@
             <td class="commentCell">
                 ${pom.comment}
             </td>
-            <td repeat.for="size of pom.sizes" class="sizeCell">
+            <td repeat.for="size of pom.sizes" class="sizeCell ${size.baseSize ? 'active' : ''}">
                 ${size.baseSize ? size.measurementValue : size.gradeValue}
             </td>
         </tr>

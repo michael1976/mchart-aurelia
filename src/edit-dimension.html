@@ -10,13 +10,13 @@
             <th class="commentCell">Description</th>
             <th class="changedPomCell">*</th>
             <th class="gradingCell">Grading</th>
-            <th repeat.for="sizeName of sizeNames()" class="sizeCell ${size.baseSize ? 'baseSize' : ''}">
+            <th repeat.for="size of allSizes()" class="sizeCell ${size.baseSize ? 'active' : ''}">
                 <!--TODO: fix sizeHeaders later-->
                 <!--<input type="text" value.bind="sizeName">-->
-                ${sizeName}
+                ${size.sizeName}
 
                 <div class="columnActions">
-                    <a href="#" click.delegate="toggleBaseSize(size)" class="setBaseSizeIcon">B</a>
+                    <a href="#" click.delegate="$parent.toggleBaseSize(size.sizeName)" class="setBaseSizeIcon">B</a>
                     <a href="#" click.delegate="addSize()" class="addSizeIcon">+</a>
                     <a href="#" click.delegate="removeSize()" class="removeSizeIcon">-</a>
                 </div>
@@ -49,7 +49,7 @@
                 <input type="text" value.bind="pom.grading"/>
             </td>
             <!--<td class="sizeCell baseSize"></td>-->
-            <td repeat.for="size of pom.sizes" class="sizeCell">
+            <td repeat.for="size of pom.sizes" class="sizeCell ${size.baseSize ? 'active' : ''}">
                 <input if.bind="size.baseSize" type="text" value.bind="size.measurementValue"/>
                 <input if.bind="!size.baseSize" type="text" value.bind="size.gradeValue"/>
             </td>
