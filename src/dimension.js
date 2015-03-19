@@ -1,15 +1,12 @@
 import {Behavior} from 'aurelia-framework';
 
+import _ from 'lodash'
+
 //import {LogManager} from 'aurelia-logging';
 
 //var logger = LogManager.getLogger("dimension");
 
 export class Dimension {
-
-    // telling the framework which properties are available on custom element
-    //static metadata() {
-    //    return Behavior.withProperty('model');
-    //}
 
     // the compose element will call this and pass in each dimension
     activate(dimension) {
@@ -20,19 +17,24 @@ export class Dimension {
         this.poms = dimension.poms;
     }
 
+    /**
+     * flatten array ->
+     * get value sizeName from all elements ->
+     * filter down to unique values
+     */
     sizeNames() {
-        //TODO: do I need to filter out dupliates? then use Set.add()
-        var sizeNames = new Set();
-        for (let pom of this.poms) {
-            for (let size of pom.sizes) {
-                sizeNames.add(size.sizeName);
-            }
-        }
-        return Array.from(sizeNames);
+        return _.chain(this.poms)
+            .pluck('sizes')
+            .flatten()
+            .pluck('sizeName')
+            .uniq()
+            .value();
     }
 
-    toggleBaseSize(size) {
-        console.log('setting ' + size.enoviaId+ ' to baseSize');
+    /**
+     * update all sizes on this dimension
+     */
+    toggleBaseSize(sizeName) {
         // TODO: find size under poms
         // TODO: toggle it as baseSize and deactivate the others
     }
@@ -43,5 +45,6 @@ export class Dimension {
             console.log('adding size to pom '+pom.enoviaId);
         }
     }
+
 
 }
