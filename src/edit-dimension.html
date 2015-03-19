@@ -11,13 +11,11 @@
             <th class="changedPomCell">*</th>
             <th class="gradingCell">Grading</th>
             <th repeat.for="size of allSizes()" class="sizeCell ${size.baseSize ? 'active' : ''}">
-                <!--TODO: fix sizeHeaders later-->
-                <!--<input type="text" value.bind="sizeName">-->
-                ${size.sizeName}
+                <input type="text" value.bind="size.sizeName">
 
                 <div class="columnActions">
                     <a href="#" click.delegate="$parent.toggleBaseSize(size.sizeName)" class="setBaseSizeIcon">B</a>
-                    <a href="#" click.delegate="addSize()" class="addSizeIcon">+</a>
+                    <a href="#" click.delegate="$parent.addSize()" class="addSizeIcon">+</a>
                     <a href="#" click.delegate="removeSize()" class="removeSizeIcon">-</a>
                 </div>
 
