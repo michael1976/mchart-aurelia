@@ -40,7 +40,8 @@
       "aurelia-router": "github:aurelia/router@^0.5.8",
       "bootstrap": "github:twbs/bootstrap@^3.3.1",
       "font-awesome": "npm:font-awesome@^4.3.0",
-      "lodash": "npm:lodash@^3.5.0"
+      "lodash": "npm:lodash@^3.5.0",
+      "sortable": "github:rubaxa/sortable@^1.1.0"
     }
   }
 }

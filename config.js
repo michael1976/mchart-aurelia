@@ -17,6 +17,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.2",
     "font-awesome": "npm:font-awesome@4.3.0",
     "lodash": "npm:lodash@3.5.0",
+    "sortable": "github:rubaxa/sortable@1.1.1",
     "github:aurelia/binding@0.3.7": {
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.5",
       "aurelia-metadata": "github:aurelia/metadata@0.3.3",
@@ -221,6 +222,7 @@ System.config({
       "isarray": "npm:isarray@0.0.1",
       "process": "github:jspm/nodelibs-process@0.1.1",
       "stream": "npm:stream-browserify@1.0.0",
+      "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },

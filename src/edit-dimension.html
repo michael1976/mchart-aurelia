@@ -1,61 +1,62 @@
 <template>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th class="rowActionHeaderCell">Actions</th>
-            <th class="sortOrderCell">Sort</th>
-            <th class="pomDescCell">Measurement Point</th>
-            <th class="typeCell"></th>
-            <th class="commentCell">Description</th>
-            <th class="changedPomCell">*</th>
-            <th class="gradingCell">Grading</th>
-            <th repeat.for="size of allSizes()" class="sizeCell ${size.baseSize ? 'active' : ''}">
-                <input type="text" value.bind="size.sizeName">
 
-                <div class="columnActions">
-                    <a href="#" click.delegate="$parent.toggleBaseSize(size.sizeName)" class="setBaseSizeIcon">B</a>
-                    <a href="#" click.delegate="$parent.addSize()" class="addSizeIcon">+</a>
-                    <a href="#" click.delegate="removeSize()" class="removeSizeIcon">-</a>
-                </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="rowActionHeaderCell">Actions</th>
+                <th class="sortOrderCell">Sort</th>
+                <th class="pomDescCell">Measurement Point</th>
+                <th class="typeCell"></th>
+                <th class="commentCell">Description</th>
+                <th class="changedPomCell">*</th>
+                <th class="gradingCell">Grading</th>
+                <th repeat.for="size of allSizes()" class="sizeCell ${size.baseSize ? 'active' : ''}">
+                    <input type="text" value.bind="size.sizeName">
 
-            </th>
-        </tr>
-        </thead>
+                    <div class="columnActions">
+                        <a href="#" click.delegate="$parent.toggleBaseSize(size.sizeName)" class="setBaseSizeIcon">B</a>
+                        <a href="#" click.delegate="$parent.addSize()" class="addSizeIcon">+</a>
+                        <a href="#" click.delegate="$parent.removeSize(size)" class="removeSizeIcon">-</a>
+                    </div>
 
-        <tbody>
-        <tr repeat.for="pom of poms" class="pom">
-            <td class="rowActionCell">
-                <!--3 ikoner, dra, lägg till, ta bort-->
-            </td>
-            <td class="sortOrderCell">
-                ${pom.sortOrder}
-            </td>
-            <td class="pomDescCell">
-                <input type="text" value.bind="pom.description"/>
-            </td>
-            <td class="typeCell">
-                <img src="images/size_16x16.png" title="According to How to measure">
-            </td>
-            <td class="commentCell">
-                <input type="text" value.bind="pom.comment"/>
-            </td>
-            <td class="changedPomCell">
-                <input type="checkbox">
-            </td>
-            <td class="gradingCell">
-                <input type="text" value.bind="pom.grading"/>
-            </td>
-            <!--<td class="sizeCell baseSize"></td>-->
-            <td repeat.for="size of pom.sizes" class="sizeCell ${size.baseSize ? 'active' : ''}">
-                <input if.bind="size.baseSize" type="text" value.bind="size.measurementValue"/>
-                <input if.bind="!size.baseSize" type="text" value.bind="size.gradeValue"/>
-            </td>
-            <!--etc..-->
-        </tr>
-        </tbody>
+                </th>
+            </tr>
+            </thead>
 
-    </table>
+            <tbody ref="el">
+                <tr repeat.for="pom of poms" class="pom">
+                    <td class="rowActionCell">
+                        <div class="dynamicTableMoveRowButton"></div>
+                        <!--3 ikoner, dra, lägg till, ta bort-->
+                    </td>
+                    <td class="sortOrderCell">
+                        ${pom.sortOrder}
+                    </td>
+                    <td class="pomDescCell">
+                        <input type="text" value.bind="pom.description"/>
+                    </td>
+                    <td class="typeCell">
+                        <img src="images/size_16x16.png" title="According to How to measure">
+                    </td>
+                    <td class="commentCell">
+                        <input type="text" value.bind="pom.comment"/>
+                    </td>
+                    <td class="changedPomCell">
+                        <input type="checkbox">
+                    </td>
+                    <td class="gradingCell">
+                        <input type="text" value.bind="pom.grading"/>
+                    </td>
+                    <!--<td class="sizeCell baseSize"></td>-->
+                    <td repeat.for="size of pom.sizes" class="sizeCell ${size.baseSize ? 'active' : ''}">
+                        <input if.bind="size.baseSize" type="text" value.bind="size.measurementValue"/>
+                        <input if.bind="!size.baseSize" type="text" value.bind="size.gradeValue"/>
+                    </td>
+                    <!--etc..-->
+                </tr>
+            </tbody>
 
+        </table>
 
 </template>

@@ -1,10 +1,7 @@
 import {Behavior} from 'aurelia-framework';
 
 import _ from 'lodash'
-
-//import {LogManager} from 'aurelia-logging';
-
-//var logger = LogManager.getLogger("dimension");
+import sortable from 'sortable';
 
 export class Dimension {
 
@@ -36,11 +33,20 @@ export class Dimension {
     }
 
     addSize() {
-        for (var pom of this.item.poms) {
+        for (var pom of this.poms) {
             pom.sizes.push({});
             console.log('adding size to pom '+pom.enoviaId);
         }
     }
 
+    removeSize(size) {
+        //TODO:
+    }
+
+    attached() {
+        sortable.create(this.el, {
+            handle: '.dynamicTableMoveRowButton'
+        })
+    }
 
 }

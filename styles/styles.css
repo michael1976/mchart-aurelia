@@ -44,3 +44,17 @@ section {
 .pictureDetail {
     max-width: 425px;
 }
+
+.rowActionCell {
+    margin: 10px;
+}
+
+.dynamicTableMoveRowButton {
+    background-image: url("/images/dragimage.png");
+    background-repeat: repeat-y;
+    cursor: s-resize;
+    width: 6px;
+    height: 16px;
+    margin-right: 14px;
+    float: left;
+}
