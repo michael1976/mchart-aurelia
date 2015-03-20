@@ -48,9 +48,21 @@ export class Dimension {
             sortable.create(this.el, {
                 handle: '.dynamicTableMoveRowButton',
                 animation: 200,
-                ghostClass: 'ghost'
+                ghostClass: 'ghost',
+                onEnd: (evt) => {
+                    //TODO: update pom sortOrder
+                }
+
             })
         }
+    }
+
+    insertPom(rowIndex) {
+        console.log('added row');
+    }
+
+    removePom(pom) {
+        console.log('remove row '+pom);
     }
 
 }

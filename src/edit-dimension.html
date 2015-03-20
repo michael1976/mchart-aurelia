@@ -27,6 +27,16 @@
                 <tr repeat.for="pom of poms" class="pom">
                     <td class="rowActionCell">
                         <div class="dynamicTableMoveRowButton"></div>
+                        <img id="tableActionAdd"
+                             class="dynamicTableActionButton"
+                             title="Add row"
+                             src="images/add_16x16.png"
+                             click.delegate="$parent.insertPom(pom.sortOrder)">
+                        <img id="tableActionRemove"
+                             class="dynamicTableActionButton"
+                             title="Remove row"
+                             src="images/remove_16x16.png"
+                             click.delegate="$parent.removePom(pom)">
                         <!--3 ikoner, dra, lägg till, ta bort-->
                     </td>
                     <td class="sortOrderCell">

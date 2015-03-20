@@ -63,3 +63,7 @@ section {
     opacity: .5;
     background: #C8EBFB;
 }
+
+.dynamicTableActionButton {
+    cursor: pointer;
+}
