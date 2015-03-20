@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div repeat.for="dimension of dimensions" id="dimension_${$index}">
+        <div repeat.for="dimension of mchart.dimensions" id="dimension_${$index}">
             <compose model.bind="dimension" view-model="./dimension" view="./edit-dimension.html"></compose>
         </div>
     </section>

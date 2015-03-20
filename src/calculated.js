@@ -8,14 +8,15 @@ export class Calculated {
     constructor(mchart) {
         this.heading = 'Calculated';
 
-        this.mchartId = mchart.mchartId;
-        this.name = mchart.name;
-        this.state = mchart.state;
-        this.blockMchart = mchart.blockMchart;
-        this.hasEditAccessBasedOnRole = mchart.hasEditAccessBasedOnRole;
-        this.hasQualityControlEditAccessBasedOnRole = mchart.hasQualityControlEditAccessBasedOnRole;
-        this.copyable = mchart.copyable;
-        this.dimensions = mchart.dimensions;
+        this.mchart = {};
+        this.mchart.mchartId = mchart.mchartId;
+        this.mchart.name = mchart.name;
+        this.mchart.state = mchart.state;
+        this.mchart.blockMchart = mchart.blockMchart;
+        this.mchart.hasEditAccessBasedOnRole = mchart.hasEditAccessBasedOnRole;
+        this.mchart.hasQualityControlEditAccessBasedOnRole = mchart.hasQualityControlEditAccessBasedOnRole;
+        this.mchart.copyable = mchart.copyable;
+        this.mchart.dimensions = mchart.dimensions;
     }
 
     activate(params, queryString, routeConfig) {
