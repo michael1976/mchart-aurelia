@@ -44,9 +44,13 @@ export class Dimension {
     }
 
     attached() {
-        sortable.create(this.el, {
-            handle: '.dynamicTableMoveRowButton'
-        })
+        if (this.el) {
+            sortable.create(this.el, {
+                handle: '.dynamicTableMoveRowButton',
+                animation: 200,
+                ghostClass: 'ghost'
+            })
+        }
     }
 
 }
