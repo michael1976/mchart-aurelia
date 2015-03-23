@@ -157,6 +157,18 @@ var dimension = {
     ]
 }
 
+//var customMatchers = {
+//    toContainSizes: function(util, customEqualityTesters) {
+//        return {
+//            compare: function(actual, expected) {
+//                var result = {};
+//                result.pass = util.equals(actual, expected, customEqualityTesters);
+//                return result;
+//            }
+//        }
+//    }
+//};
+
 describe('the Dimension module', () => {
 
     var sut;
@@ -164,13 +176,20 @@ describe('the Dimension module', () => {
         // given
         sut = new Dimension();
         sut.activate(dimension);
+
+        //jasmine.addMatchers(customMatchers);
     });
 
-    it('returns an array of unique sizes for a specific dimension', () => {
+    it('returns all sizes in first pom for a specific dimension', () => {
         // when
         var sizes = sut.allSizes();
         // then
-        expect(sizes).toContain('S', 'M', 'L');
+        var actualSizeNames = [];
+        for (let size of sizes) {
+            actualSizeNames.push(size.sizeName);
+        }
+
+        expect(actualSizeNames).toEqual(['S', 'M', 'L']);
     });
 
     it('applies a baseSize to a size in all poms for a dimension', () => {
